@@ -197,11 +197,9 @@ int main(int argc, char **argv) {
     gEventTree->Branch("EventData", gCurrentEventHeader.get());
   }
 
-  const size_t lineBufSize = 300;
   string line;
   while (std::getline(inputFile, line)) {
     parseLine(line);
-    line[0] = '\0';
   }
 
   eventPostProcess();
